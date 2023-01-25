@@ -38,7 +38,7 @@ function App() {
   <OperationBtn operation="-" dispatch={dispatch} />
   <NumberBtn digit="." dispatch={dispatch} />
   <NumberBtn digit="0" dispatch={dispatch} />
-  <button className="span-two" onClick={() => dispatch({ type: ACTIONS.EVALUATE })}>=</button>
+  <button className="span-two" id="eaquals" onClick={() => dispatch({ type: ACTIONS.EVALUATE })}>=</button>
 </div>
   );
 }
