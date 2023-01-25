@@ -41,7 +41,6 @@
   }
   
   .output {
-    border-radius: 5px;
     grid-column: 1 / -1;
     background-color: rgba(0, 0, 0, .75);
     display: flex;
