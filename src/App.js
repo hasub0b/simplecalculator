@@ -1,6 +1,14 @@
 import "./styles.css"
 import { useReducer } from "react";
 
+const ACTIONS = {
+  ADD: "add",
+  DELETE: "delete",
+  CHOOSE_OPERATION: "choose-operation",
+  CLEAR: "clear",
+  EAQUALS: "eaquals",
+}
+
 function App() {
 
   const [{current, previous,operation}, dispatch] = useReducer(reducer, {})
@@ -32,8 +40,18 @@ function App() {
   );
 }
 
-function reducer(state, action){
+function reducer(state, {type, parameter}){
 
+  switch (type) {
+    case ACTIONS.ADD:
+      if (state.overwrite) {
+        return {
+          ...state,
+          currentOperand: payload.digit,
+          overwrite: false,
+        }
+      }
+    }
 }
 
 export default App;
