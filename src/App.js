@@ -2,7 +2,7 @@ import "./styles.css"
 import NumberBtn from "./NumberBtn";
 import { useReducer } from "react";
 
-const ACTIONS = {
+export const ACTIONS = {
   ADD: "add",
   DELETE: "delete",
   CHOOSE_OPERATION: "choose-operation",
@@ -22,7 +22,7 @@ function App() {
   </div>
   <button className="span-two">C</button>
   <button>DEL</button>
-  <button>1</button>
+  <NumberBtn digit="1" dispatch={dispatch} />
   <button>2</button>
   <button>3</button>
   <button>*</button>
@@ -41,7 +41,7 @@ function App() {
   );
 }
 
-function reducer(state, {type, parameter}){
+function reducer(state, {type, payload}){
 
   switch (type) {
     case ACTIONS.ADD:
