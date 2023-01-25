@@ -12,13 +12,13 @@ export const ACTIONS = {
 
 function App() {
 
-  const [{current, previous,operation}, dispatch] = useReducer(reducer, {})
+  const [{currentOperand, previousOperand,operation}, dispatch] = useReducer(reducer, {})
 
   return (
   <div className="calculator-grid">
   <div className="output">
-  <div className="previous-operand">{previous} {operation}</div>
-    <div className="current-operand">{current}</div>
+  <div className="previous-operand">{previousOperand} {operation}</div>
+    <div className="current-operand">{currentOperand}</div>
   </div>
   <button className="span-two">C</button>
   <button>DEL</button>
@@ -92,7 +92,7 @@ function reducer(state, {type, payload}){
       }
     case ACTIONS.CLEAR:
       return {}
-    case ACTIONS.DELETE_DIGIT:
+    case ACTIONS.DELETE:
       if (state.overwrite) {
         return {
           ...state,
