@@ -1,5 +1,6 @@
 import "./styles.css"
 import NumberBtn from "./NumberBtn";
+import OperationBtn from "./OperatinoBtn";
 import { useReducer } from "react";
 
 export const ACTIONS = {
@@ -22,18 +23,19 @@ function App() {
   </div>
   <button className="span-two">C</button>
   <button>DEL</button>
+  <OperationBtn operation="-" dispatch={dispatch} />
   <NumberBtn digit="1" dispatch={dispatch} />
   <NumberBtn digit="2" dispatch={dispatch} />
   <NumberBtn digit="3" dispatch={dispatch} />
-  <button>*</button>
+  <OperationBtn operation="*" dispatch={dispatch} />
   <NumberBtn digit="4" dispatch={dispatch} />
   <NumberBtn digit="5" dispatch={dispatch} />
   <NumberBtn digit="6" dispatch={dispatch} />
-  <button>+</button>
+  <OperationBtn operation="+" dispatch={dispatch} />
   <NumberBtn digit="7" dispatch={dispatch} />
   <NumberBtn digit="8" dispatch={dispatch} />
   <NumberBtn digit="9" dispatch={dispatch} />
-  <button>-</button>
+  <OperationBtn operation="-" dispatch={dispatch} />
   <NumberBtn digit="." dispatch={dispatch} />
   <NumberBtn digit="0" dispatch={dispatch} />
   <button className="span-two">=</button>
