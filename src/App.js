@@ -21,8 +21,8 @@ function App() {
   <div className="previous-operand">{previousOperand} {operation}</div>
     <div className="current-operand">{currentOperand}</div>
   </div>
-  <button className="span-two">C</button>
-  <button>DEL</button>
+  <button className="span-two" onClick={() => dispatch({ type: ACTIONS.CLEAR })}>C</button>
+  <button onClick={() => dispatch({ type: ACTIONS.DELETE })}>DEL</button>
   <OperationBtn operation="-" dispatch={dispatch} />
   <NumberBtn digit="1" dispatch={dispatch} />
   <NumberBtn digit="2" dispatch={dispatch} />
@@ -38,7 +38,7 @@ function App() {
   <OperationBtn operation="-" dispatch={dispatch} />
   <NumberBtn digit="." dispatch={dispatch} />
   <NumberBtn digit="0" dispatch={dispatch} />
-  <button className="span-two">=</button>
+  <button className="span-two" onClick={() => dispatch({ type: ACTIONS.EVALUATE })}>=</button>
 </div>
   );
 }
