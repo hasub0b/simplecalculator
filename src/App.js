@@ -23,19 +23,19 @@ function App() {
   <button className="span-two">C</button>
   <button>DEL</button>
   <NumberBtn digit="1" dispatch={dispatch} />
-  <button>2</button>
-  <button>3</button>
+  <NumberBtn digit="2" dispatch={dispatch} />
+  <NumberBtn digit="3" dispatch={dispatch} />
   <button>*</button>
-  <button>4</button>
-  <button>5</button>
-  <button>6</button>
+  <NumberBtn digit="4" dispatch={dispatch} />
+  <NumberBtn digit="5" dispatch={dispatch} />
+  <NumberBtn digit="6" dispatch={dispatch} />
   <button>+</button>
-  <button>7</button>
-  <button>8</button>
-  <button>9</button>
+  <NumberBtn digit="7" dispatch={dispatch} />
+  <NumberBtn digit="8" dispatch={dispatch} />
+  <NumberBtn digit="9" dispatch={dispatch} />
   <button>-</button>
-  <button>.</button>
-  <button>0</button>
+  <NumberBtn digit="." dispatch={dispatch} />
+  <NumberBtn digit="0" dispatch={dispatch} />
   <button className="span-two">=</button>
 </div>
   );
