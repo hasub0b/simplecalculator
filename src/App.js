@@ -9,6 +9,8 @@ export const ACTIONS = {
   CHOOSE_OPERATION: "choose-operation",
   CLEAR: "clear",
   EVALUATE: "EVALUATE",
+  SQRT: "sqrt"
+
 }
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
   </div>
   <button className="span-two" onClick={() => dispatch({ type: ACTIONS.CLEAR })}>C</button>
   <button onClick={() => dispatch({ type: ACTIONS.DELETE })}>DEL</button>
-  <OperationBtn operation="-" dispatch={dispatch} />
+  <OperationBtn operation="/" dispatch={dispatch} />
   <NumberBtn digit="1" dispatch={dispatch} />
   <NumberBtn digit="2" dispatch={dispatch} />
   <NumberBtn digit="3" dispatch={dispatch} />
@@ -39,6 +41,7 @@ function App() {
   <NumberBtn digit="." dispatch={dispatch} />
   <NumberBtn digit="0" dispatch={dispatch} />
   <button className="span-two" id="eaquals" onClick={() => dispatch({ type: ACTIONS.EVALUATE })}>=</button>
+  <button onClick={() => dispatch({ type: ACTIONS.SQRT})}>√</button>
 </div>
   );
 }
@@ -127,6 +130,20 @@ function reducer(state, {type, payload}){
         operation: null,
         currentOperand: evaluate(state),
       }
+
+    case ACTIONS.SQRT:
+      if(
+        state.currentOperand == null
+      ){
+        return state
+      }
+
+      return{
+        ...state,
+        overwrite: true,
+        currentOperand: Math.sqrt(parseFloat(state.currentOperand))
+      }
+
     }
 }
 
@@ -145,7 +162,7 @@ function evaluate({ currentOperand, previousOperand, operation }) {
     case "*":
       computation = prev * current
       break
-    case "÷":
+    case "/":
       computation = prev / current
       break
   }
