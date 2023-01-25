@@ -1,4 +1,5 @@
 import "./styles.css"
+import NumberBtn from "./NumberBtn";
 import { useReducer } from "react";
 
 const ACTIONS = {
