@@ -23,6 +23,7 @@
   }
   
   .calculator-grid > button {
+    border-radius: 5px;
     cursor: pointer;
     font-size: 2rem;
     border: 1px solid white;
@@ -40,6 +41,7 @@
   }
   
   .output {
+    border-radius: 5px;
     grid-column: 1 / -1;
     background-color: rgba(0, 0, 0, .75);
     display: flex;
@@ -49,4 +51,5 @@
     padding: .75rem;
     word-wrap: break-word;
     word-break: break-all;
+    color: white;
   }
